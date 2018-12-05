@@ -1,16 +1,16 @@
 package com.example.luk.weather;
 
 public class Clouds {
-    private int all;
+    private double all;
 
     public Clouds() {
     }
 
-    public int getAll() {
+    public double getAll() {
         return all;
     }
 
-    public void setAll(int all) {
+    public void setAll(double all) {
         this.all = all;
     }
 }

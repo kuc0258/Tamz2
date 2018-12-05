@@ -100,7 +100,7 @@ public class TodayWeatherFragment extends Fragment {
                         txt_sunrise.setText(Common.convertUnixToHour(weatherResult.getSys().getSunrise()));
                         txt_sunset.setText(Common.convertUnixToHour(weatherResult.getSys().getSunset()));
                         txt_geo.setText(new StringBuilder().append(weatherResult.getCoord().toString()));
-                       // txt_wind.setText(new StringBuilder(String.valueOf(weatherResult.getWind())).append(" km/h").toString());
+                        txt_wind.setText(new StringBuilder(String.valueOf(weatherResult.getWind().getSpeed())).append(" m/s").toString());
 
                        //Display
                         weather_panel.setVisibility(View.VISIBLE);

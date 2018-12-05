@@ -28,6 +28,8 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import java.util.List;
 
+import static com.google.android.gms.location.LocationServices.getFusedLocationProviderClient;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                              if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                                  return; }
                          }
-                         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
+                         fusedLocationProviderClient = getFusedLocationProviderClient(MainActivity.this);
                          fusedLocationProviderClient.requestLocationUpdates(locationRequest,locationCallback,Looper.myLooper());
                     }
 
@@ -86,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 setupViewPager(viewPager);
                 tabLayout = (TabLayout)findViewById(R.id.tabs);
                 tabLayout.setupWithViewPager(viewPager);
+
+                Log.d("Location" ,locationResult.getLastLocation().getLatitude()+"/"+locationResult.getLastLocation().getLongitude());
             }
         };
     }
