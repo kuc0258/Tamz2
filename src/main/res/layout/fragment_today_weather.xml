@@ -10,6 +10,7 @@
    <LinearLayout
        android:id="@+id/weather_panel"
        android:orientation="vertical"
+       android:visibility="gone"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content">
        
@@ -183,6 +184,13 @@
 
 
    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:indeterminate="true"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 
