@@ -1,7 +1,9 @@
 package com.example.luk.weather;
 
+import java.text.DecimalFormat;
+
 public class Main {
-    private double temperature;
+    private double temp;
     private double pressure;
     private double humidity;
     private double temp_min;
@@ -11,12 +13,13 @@ public class Main {
     }
 
     public double getTemp() {
-        return temperature;
+        return temp-274;
     }
 
-    public void setTemp(double temperature) {
-        this.temperature = temperature;
+    public void setTemp(double temp) {
+        this.temp = temp;
     }
+
 
     public double getPressure() {
         return pressure;
