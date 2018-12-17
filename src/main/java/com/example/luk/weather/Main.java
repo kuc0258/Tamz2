@@ -13,7 +13,7 @@ public class Main {
     }
 
     public double getTemp() {
-        return temp-274;
+        return (int)temp-274;
     }
 
     public void setTemp(double temp) {
