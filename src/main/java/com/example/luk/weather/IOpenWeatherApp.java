@@ -13,7 +13,7 @@ public interface IOpenWeatherApp {
 
     @GET("forecast")
     Observable<WeatherForecastResult> getForecastWeatherByLatLng(@Query("lat") String lat,
-                                                                 @Query("lng") String lng,
+                                                                 @Query("lon") String lng,
                                                                  @Query("appid") String appid,
                                                                  @Query("unints") String unit);
 
