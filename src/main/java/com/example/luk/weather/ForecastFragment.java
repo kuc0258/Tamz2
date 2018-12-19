@@ -54,7 +54,7 @@ public class ForecastFragment extends Fragment {
         View itemView = inflater.inflate(R.layout.fragment_forecast, container, false);
 
         txt_city_name = (TextView)itemView.findViewById(R.id.txt_city_name);
-        txt_geo = (TextView)itemView.findViewById(R.id.txt_geo);
+        txt_geo = (TextView)itemView.findViewById(R.id.txt_geo_coord);
 
         recycler_forecast = (RecyclerView)itemView.findViewById(R.id.recycler_forecast);
         recycler_forecast.setHasFixedSize(true);

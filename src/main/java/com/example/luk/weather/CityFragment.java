@@ -1,7 +1,10 @@
 package com.example.luk.weather;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -25,7 +28,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.zip.GZIPInputStream;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -46,6 +51,7 @@ public class CityFragment extends Fragment {
     TextView txt_city_name,txt_humidity,txt_wind,txt_temperature,txt_preassure,txt_sunrise,txt_sunset,txt_description,txt_geo,txt_date_time;
     LinearLayout weather_panel;
     ProgressBar loading;
+    SharedPreferences preferences;
 
     CompositeDisposable compositeDisposable;
     IOpenWeatherApp mService;
@@ -137,6 +143,12 @@ public class CityFragment extends Fragment {
                             suggest.add(search);
                     }
                     searchBar.setLastSuggestions(suggest);
+                    Set<String> tasksSet = new HashSet<String>(listCity);
+                    PreferenceManager.getDefaultSharedPreferences(getContext())
+                            .edit()
+                            .putStringSet("tasks_set", tasksSet)
+                            .commit();
+
 
                 }
 
@@ -156,6 +168,10 @@ public class CityFragment extends Fragment {
                     getWeatherInformation(text.toString());
 
                     searchBar.setLastSuggestions(listCity);
+                   /* Set<String> tasksSet = PreferenceManager.getDefaultSharedPreferences(getContext())
+                            .getStringSet("tasks_set", new HashSet<String>());
+                    List<String> tasksList = new ArrayList<String>(tasksSet);
+                    searchBar.setLastSuggestions(tasksList);*/
 
                 }
 

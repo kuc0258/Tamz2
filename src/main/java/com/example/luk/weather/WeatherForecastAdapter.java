@@ -52,7 +52,7 @@ public class WeatherForecastAdapter extends RecyclerView.Adapter<WeatherForecast
             super(itemView);
 
             img_weather = (ImageView)itemView.findViewById(R.id.img_weather);
-            txt_date_time = (TextView)itemView.findViewById(R.id.txt_date_time);
+            txt_date_time = (TextView)itemView.findViewById(R.id.txt_date);
             txt_description = (TextView)itemView.findViewById(R.id.txt_description);
             txt_temperature = (TextView)itemView.findViewById(R.id.txt_temperature);
         }
